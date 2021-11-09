@@ -1,0 +1,75 @@
+.sajek-container {
+  position: relative;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  color: white;
+}
+
+.sajek-container img {
+    width: 250px;
+}
+
+.homebody-row {
+    margin-top: 50px;
+}
+
+.homebody-col-md-4 {
+    color: white;
+}
+
+.homebody-col-md-4 h1 {
+    font-size: 65px;
+    font-weight: bold;
+}
+
+.homebody-col-md-4 p {
+    font-size: 14px;
+}
+
+.booking-btn {
+    background-color: #F9A51A;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.booking-form {
+    background-color: white;
+    width: 470px;
+    height: 427px;
+    margin-left: 200px;
+    padding: 70px 0 0 0;
+    border-radius: 10px;
+}
+
+.booking-form label {
+    color: gray;
+    margin: 10px 0 10px 0;
+}
+
+
+.start-booking-btn {
+    background-color: #F9A51A;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 100px;
+}
+
+.form-upperpart {
+    margin: 0px;
+}
+
+.form-downpart {
+    margin: 20px 0 20px 60px;
+}

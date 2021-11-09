@@ -1,0 +1,32 @@
+.nav-link-white {
+  color: white;
+  margin-right: 100px;
+}
+
+.nav-link {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+
+.search-box {
+    background-color: rgb(255, 255, 255, 0.3);
+    border: 2px solid white;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.search-box::placeholder {
+    color: white;
+}
+
+/* .nav-link Nav.Link {
+  background-color: red;
+} */
+
+.login-button {
+  background-color: #F9A51A;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+}
