@@ -1,0 +1,42 @@
+.login-container {
+    height: 400px;
+    width: 400px;
+    border: 1px solid gray;
+    margin: auto;
+    padding: 10px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.h2-Login {
+    margin: 30px 0 30px 0;
+}
+
+.login-page-input {
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.remember-checkbox {
+    margin-left: 60px;
+}
+
+.forgot-button {
+    margin-left: 30px;
+}
+
+.login-root {
+    text-align: center;
+}
+
+.social-login-btn {
+    background-color: white;
+    padding: 5px 20px;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+}
+
+.account-creation-link {
+    color: #F9A51A;
+}
