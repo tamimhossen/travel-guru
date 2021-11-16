@@ -1,0 +1,15 @@
+.room {
+    width: 230px;
+}
+
+.room-row {
+    margin-bottom: 20px;
+}
+
+.details-body {
+    margin-top: 50px;
+}
+
+.room-row-col-7 p {
+    color: gray;
+}
