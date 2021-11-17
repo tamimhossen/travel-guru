@@ -10,15 +10,25 @@ import { UserContext } from "../../App";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "../firebaseConfig.js/firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../RequireAuth/RequireAuth";
 
 const Login = () => {
   const app = initializeApp(firebaseConfig);
   const [loggedInuser, setLoggedInUser] = useContext(UserContext);
+  let navigate = useNavigate();
+  let location = useLocation();
+  let auth = useAuth();
+
+  // let from = location.state?.from?.pathname || "/";
+  let from = "/details";
+
 
   const handleFbSignIn = () => {
     fbSignInWIthAuthProvider()
       .then((res) => {
         setLoggedInUser(res);
+        navigate(from, { replace: true });
       })
       .catch((res) => {
         setLoggedInUser(res);
@@ -29,6 +39,7 @@ const Login = () => {
     googleSingnInWithAuthProvider()
       .then((res) => {
         setLoggedInUser(res);
+        navigate(from, { replace: true });
       })
       .catch((res) => {
         setLoggedInUser(res);
@@ -64,6 +75,7 @@ const Login = () => {
         newUserInfo.error = '';
         newUserInfo.success = true;
         setLoggedInUser(newUserInfo);
+        navigate(from, { replace: true });
         console.log(userCredential);
       })
       .catch((error) => {

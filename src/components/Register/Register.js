@@ -23,22 +23,22 @@ const Register = () => {
 
   const handleGoolgeSignIn = () => {
     googleSingnInWithAuthProvider()
-    .then(res => {
-      setLoggedInUser(res);
-    })
-    .catch(res => {
-      setLoggedInUser(res);
-    })
+      .then((res) => {
+        setLoggedInUser(res);
+      })
+      .catch((res) => {
+        setLoggedInUser(res);
+      });
   };
 
   const handleFbSignIn = () => {
     fbSignInWIthAuthProvider()
-    .then(res => {
-      setLoggedInUser(res);
-    })
-    .catch(res => {
-      setLoggedInUser(res);
-    })
+      .then((res) => {
+        setLoggedInUser(res);
+      })
+      .catch((res) => {
+        setLoggedInUser(res);
+      });
   };
 
   const handleBlur = (e) => {
@@ -70,11 +70,15 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, loggedInuser.email, loggedInuser.password)
+    createUserWithEmailAndPassword(
+      auth,
+      loggedInuser.email,
+      loggedInuser.password
+    )
       .then((userCredential) => {
         const user = userCredential.user;
-        const newUserInfo = {...loggedInuser};
-        newUserInfo.error = '';
+        const newUserInfo = { ...loggedInuser };
+        newUserInfo.error = "";
         newUserInfo.success = true;
         updateProfileInfo(loggedInuser.name);
         setLoggedInUser(newUserInfo);
@@ -82,13 +86,13 @@ const Register = () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-        const newUserInfo = {...loggedInuser};
+        const newUserInfo = { ...loggedInuser };
         newUserInfo.success = false;
         newUserInfo.error = errorMessage;
         setLoggedInUser(newUserInfo);
       });
 
-      e.preventDefault();
+    e.preventDefault();
   };
 
   const updateProfileInfo = (name) => {
@@ -106,7 +110,7 @@ const Register = () => {
 
   const conPrint = () => {
     console.log(loggedInuser);
-  }
+  };
 
   return (
     <div className="register-root">
@@ -176,9 +180,14 @@ const Register = () => {
       </button>
       <br />
       <button onClick={conPrint}>console</button>
-      {
-        loggedInuser.success ? <p>Account Created Successfully</p> : <p>{loggedInuser.error}</p>
-      }
+      {loggedInuser.success ? (
+        <p>
+          Account Created Successfully <br /> Go Back and{" "}
+          <Link to="/login">Login Now</Link>{" "}
+        </p>
+      ) : (
+        <p>{loggedInuser.error}</p>
+      )}
     </div>
   );
 };

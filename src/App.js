@@ -10,6 +10,7 @@ import Details from "./components/Details/Details";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import RequireAuth from "./components/RequireAuth/RequireAuth";
 
 export const UserContext = createContext();
 
@@ -28,7 +29,10 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/createAccount" element={<Register />} />
-      <Route path="/details" element={<Details />} />
+      <Route path="/details" element={
+      <RequireAuth>
+        <Details />
+      </RequireAuth> } />
     </Routes>
     </UserContext.Provider>
   );

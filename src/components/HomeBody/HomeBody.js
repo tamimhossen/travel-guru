@@ -4,6 +4,7 @@ import "./HomeBody.css";
 import sajekPng from "../../assets/Image/Sajek.png";
 import sreemongolPng from "../../assets/Image/Sreemongol.png";
 import sundorbonPng from "../../assets/Image/sundorbon.png";
+import { Link } from "react-router-dom";
 
 const HomeBody = () => {
   const [place, setPlace] = useState({
@@ -108,7 +109,13 @@ const HomeBody = () => {
                 <input type="date" name="to" id="to" />
               </div>
             </div>
-              <input type="submit" value="Start Booking" className="start-booking-btn" />
+            <Link to="/details">
+              <input
+                type="submit"
+                value="Start Booking"
+                className="start-booking-btn"
+              />
+            </Link>
           </form>
         </Col>
       </Row>
